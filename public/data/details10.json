@@ -1,0 +1,14 @@
+{
+    "result":
+        {
+            "id":10,
+            "name":"中国近代史",
+            "author":"赵廷颰",
+            "time":"2021-1-10",
+            "src":"data/lishi/2.jpg",
+            "username":"user1",
+            "phone":"15946468888",
+            "qq":"5135454"
+        }
+    
+}

@@ -1,18 +1,40 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <homeHeader @changeToPre="toPre" @changeToAft='toAft' @changeToShouye='toShouye' ></homeHeader>
+    <component :is="comName"></component>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
+import homeHeader from '@/components/homeHeader.vue'
+import homeContent from '@/components/homeContent.vue'
+import prepublish from '@/components/prepublish.vue'
+import afterpublish from '@/components/afterpublish.vue'
 export default {
   name: 'Home',
+  data() {
+    return {
+      comName : "homeContent"
+    }
+  },
   components: {
-    HelloWorld
+    homeHeader,
+    homeContent,
+    prepublish,
+    afterpublish
+  },
+  methods:{
+    toPre(){
+      this.comName = "prepublish"
+    },
+    toAft(){
+      this.comName = "afterpublish"
+    },
+    toShouye(){
+      this.comName = "homeContent"
+    }
   }
 }
 </script>
